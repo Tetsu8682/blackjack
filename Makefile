@@ -1,4 +1,4 @@
-all: ./preBuild/paquet.o ./preBuild/croupier.o ./preBuild/joueur.o ./preBuild/game.o prog
+all: ./preBuild/paquet.o ./preBuild/croupier.o ./preBuild/joueur.o ./preBuild/game.o ./preBuild/match.o prog
 
 ./preBuild/paquet.o: ./src/paquet.cpp ./build/paquet.hpp
 	g++ -c -g ./src/paquet.cpp -o ./preBuild/paquet.o
@@ -12,6 +12,9 @@ all: ./preBuild/paquet.o ./preBuild/croupier.o ./preBuild/joueur.o ./preBuild/ga
 ./preBuild/game.o: ./src/game.cpp ./build/game.hpp
 	g++ -c -g ./src/game.cpp -o ./preBuild/game.o
 
-prog: ./preBuild/paquet.o ./preBuild/croupier.o ./preBuild/joueur.o ./preBuild/game.o ./src/main.cpp
-	g++ -g ./preBuild/paquet.o ./preBuild/croupier.o ./preBuild/joueur.o ./preBuild/game.o ./src/main.cpp -o prog
+./preBuild/match.o: ./src/match.cpp ./build/match.hpp
+	g++ -c -g ./src/match.cpp -o ./preBuild/match.o
+
+prog: ./preBuild/paquet.o ./preBuild/croupier.o ./preBuild/joueur.o ./preBuild/game.o ./preBuild/match.o ./src/main.cpp
+	g++ -g ./preBuild/paquet.o ./preBuild/croupier.o ./preBuild/joueur.o ./preBuild/game.o ./preBuild/match.o ./src/main.cpp -o prog
 

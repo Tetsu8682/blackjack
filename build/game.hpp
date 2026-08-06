@@ -1,6 +1,8 @@
 #pragma once
+
 #include <stdio.h>
 #include <vector>
+
 #include "croupier.hpp"
 #include "joueur.hpp"
 

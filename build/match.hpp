@@ -6,6 +6,7 @@
 #include "game.hpp"
 #include "joueur.hpp"
 #include "croupier.hpp"
+#include "paquet.hpp"
 
 /*
 La classe Match permet d'enchainer plusieurs game d'affilé, comme dans un vrai casino.
@@ -16,11 +17,12 @@ InterMatch : Permet de gérer les joueurs qui souhaite s'ajouter ou se retirer d
 */
 class Match {
     public:
-        Match();
+        Match(Croupier c, Paquet p);
         void InitMatch(void);
         void PlayGame(void);
-        void InterMatch(void);
+        int InterMatch(void);
     private:
         std::vector<Joueur> players;
         Croupier croupier;
+        Paquet paquet;
 };

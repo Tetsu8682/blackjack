@@ -5,6 +5,14 @@
 
 #include "paquet.hpp"
 
+/*
+Cette classe permet de gérer l'ensemble des attributs et des méthodes du croupier.
+-Constructeur
+-draw : Permet de piocher une carte et l'ajoute à son jeu
+-afficher : Simple fonction d'affichage de son jeu
+-eraseGame : Remet son jeu à 0, pour enchainer sur la prochaine partie
+-getSet : Permet d'accéder à son jeu
+*/
 
 class Croupier {
     public:

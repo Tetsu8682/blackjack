@@ -4,7 +4,11 @@
 #include <iostream>
 #include <random>
 
-
+/*
+Gestion du paquet de carte. Pour le moment gestion simplifiée.
+Constructeur : crée une liste de nombre de 1 à 52.
+draw : Permet de tirer aléatoirement une carte dans le paquet
+*/
 class Paquet {
     public:
         Paquet();

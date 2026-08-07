@@ -38,7 +38,7 @@ void Game::InitialPhase(void){
     for(Joueur& j:players){
         j.draw();
         j.draw();
-        printf("Jeu du joueur %d : ", i);
+        std::cout << "Jeu de " << j.getname() << " : \n";
         printGame(j.getSet());
         i++;
     }
@@ -53,7 +53,7 @@ void Game::GamePhase(void){
     printf("Phase de jeu : \n");
     for(Joueur& j:players){
         char a;
-        printf("Joueur %d \n", i);
+        std::cout << "Joueur : " << j.getname() << "\n";
         printGame(j.getSet());
         printf("Voulez-vous piocher une carte ? (y/n) \n");
         scanf(" %c", &a);
@@ -79,22 +79,22 @@ void Game::EndPhase(void){
     printf("Résultat croupier : %d \n", valuec);
     for(Joueur& j: players){
         int valuej = calculValue(j.getSet());
-        printf("Résultat Joueur %d : %d \n", i, valuej);
+        std::cout << "Résultat Joueur : "  << j.getname() << " -> " << valuej << "\n" ;
         if(valuej > 21){
-            printf("Le joueur %d a perdu car il a dépassé 21. \n",i);
+            std::cout <<  j.getname() <<  " a perdu car il a dépassé 21. \n";
         }
         else if(valuec > 21){
-            printf("Tous les joueurs en-dessous de 21 ont gagné. Donc le joueur %d gagne \n", i);
+            std::cout << "Tous les joueurs en-dessous de 21 ont gagné. " << j.getname() << " a donc gagné. \n";
         }
         else{
             if(valuej > valuec){
-                printf("Le joueur %d a gagné. \n", i);
+                std::cout << j.getname() << "a gagné. \n";
             }
             else if(valuej == valuec){
-                printf("Le joueur %d fait égalité avec le croupier. \n", i);
+                std::cout <<  j.getname() << " a fait égalité avec le croupier. \n";
             }
             else{
-                printf("Le joueur %d a perdu. \n", i);
+                std::cout <<  j.getname() <<" a perdu. \n";
             }
         }
         i ++;

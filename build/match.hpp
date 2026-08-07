@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 #include <vector>
+#include <string>
 
 #include "game.hpp"
 #include "joueur.hpp"

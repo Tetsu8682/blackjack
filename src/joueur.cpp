@@ -1,7 +1,7 @@
 #include "../build/joueur.hpp"
 
-Joueur::Joueur(Paquet* p)
-    :currentP(p)
+Joueur::Joueur(Paquet* p, std::string n)
+    :currentP(p), name(n)
 {
 }
 
@@ -14,7 +14,7 @@ std::vector<int> Joueur::getSet(void){
 }
 
 void Joueur::afficher(void){
-    printf("Jeu du joueur : \n");
+    std::cout << "Jeu de" <<  name << " : \n";
     for(int v:set){
         printf("%d  ", v);
     }
@@ -23,4 +23,8 @@ void Joueur::afficher(void){
 
 void Joueur::eraseGame(void){
     set.clear();
+}
+
+std::string Joueur::getname(void){
+    return name;
 }

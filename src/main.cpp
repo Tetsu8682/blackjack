@@ -4,15 +4,23 @@
 #include "../build/game.hpp"
 #include "../build/match.hpp"
 
+//#define DEBUG
+
 int main(void){
-    Paquet p;
-    Croupier cas(&p);
-    int joue = 1;
-    Match m(cas, p);
-    m.InitMatch();
-    while(joue == 1){
-        m.PlayGame();
-        joue = m.InterMatch();
-    }
-   return 1;
+    #ifdef DEBUG
+        Paquet p;
+        Joueur r(&p, "Romain");
+        r.afficher();
+    #else
+        Paquet p;
+        Croupier cas(&p);
+        int joue = 1;
+        Match m(cas, p);
+        m.InitMatch();
+        while(joue == 1){
+            m.PlayGame();
+            joue = m.InterMatch();
+        }
+    return 1;
+   #endif
 }

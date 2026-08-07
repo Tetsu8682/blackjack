@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 #include <vector>
+#include <string>
 
 #include "paquet.hpp"
 
@@ -16,12 +17,14 @@ Cette classe permet de gérer l'ensemble des attributs et des méthodes du joueu
 
 class Joueur {
     public:
-        Joueur(Paquet *p);
+        Joueur(Paquet *p, std::string n);
         void draw(void);
         void afficher(void);
         std::vector<int> getSet(void);
         void eraseGame(void);
+        std::string getname(void);
     private:
         std::vector<int> set;
         Paquet* currentP;
+        std::string name;
 };

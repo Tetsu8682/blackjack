@@ -10,7 +10,10 @@ void Match::InitMatch(){
     printf("Combien de joueur(s) prenn(ent) place?");
     scanf("%d", &nbjoueur);
     for(int i=0 ; i<nbjoueur; i++){
-        Joueur j(&paquet);
+        std::string name;
+        std::cout << "Nom du joueur : \n";
+        std::cin >> name;
+        Joueur j(&paquet, name);
         players.push_back(j);
     }
 }

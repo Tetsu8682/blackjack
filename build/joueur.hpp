@@ -17,14 +17,21 @@ Cette classe permet de gérer l'ensemble des attributs et des méthodes du joueu
 
 class Joueur {
     public:
-        Joueur(Paquet *p, std::string n);
+        Joueur(Paquet *p, std::string n, int a);
         void draw(void);
         void afficher(void);
         std::vector<int> getSet(void);
         void eraseGame(void);
         std::string getname(void);
+        void SetBet(int bet);
+        int GetBet(void);
+        void SetBank(int b);
+        int GetBank(void);
+        void UpdateBank(int u);
     private:
         std::vector<int> set;
         Paquet* currentP;
         std::string name;
+        int bet = 0;
+        int bank = 0;
 };

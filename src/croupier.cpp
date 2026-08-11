@@ -24,3 +24,7 @@ std::vector<int> Croupier::getSet(void){
 void Croupier::eraseGame(void){
     set.clear();
 }
+
+void Croupier::UpdateBanker(int amount){
+    banker += amount;
+}

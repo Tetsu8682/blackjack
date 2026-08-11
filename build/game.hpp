@@ -25,6 +25,6 @@ class Game {
         void GamePhase(void);
         void EndPhase(void);
     private:
-        std::vector<Joueur> players;
+        std::vector<Joueur>& players;
         Croupier croupier;
 };

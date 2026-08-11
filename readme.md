@@ -7,5 +7,4 @@ Règles encore non implémantées:
 -Split (en cas de double, joueur 2 parties simultanément)
 -Gestion du paquet (Pour le moment pioche aléatoirement entre 1 et 52)
 -Status spéciale de l'as (peut valoir 1 ou 11)
--Manque le système d'argent
--Gestions des joueurs et de plusieurs parties à la suite
+-Possibilité de rejoindre/quitter le match en cours de route

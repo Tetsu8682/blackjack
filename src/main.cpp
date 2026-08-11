@@ -9,7 +9,10 @@
 int main(void){
     #ifdef DEBUG
         Paquet p;
-        Joueur r(&p, "Romain");
+        Joueur r(&p, "Romain",100);
+        r.UpdateBank(-50);
+        int amount = r.GetBank();
+        std::cout << amount << "\n" ; 
         r.afficher();
     #else
         Paquet p;

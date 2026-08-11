@@ -21,7 +21,9 @@ class Croupier {
         void afficher(void);
         void eraseGame(void);
         std::vector<int> getSet(void);
+        void UpdateBanker(int amount);
     private:
         std::vector<int> set;
         Paquet* currentP;
+        int banker = 0;
 };

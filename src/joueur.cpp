@@ -1,7 +1,7 @@
 #include "../build/joueur.hpp"
 
-Joueur::Joueur(Paquet* p, std::string n)
-    :currentP(p), name(n)
+Joueur::Joueur(Paquet* p, std::string n, int a)
+    :currentP(p), name(n), bank(a)
 {
 }
 
@@ -27,4 +27,20 @@ void Joueur::eraseGame(void){
 
 std::string Joueur::getname(void){
     return name;
+}
+
+void Joueur::SetBet(int bet){
+    this->bet = bet;
+}
+
+int Joueur::GetBet(void){
+    return bet;
+}
+
+int Joueur::GetBank(void){
+    return bank;
+}
+
+void Joueur::UpdateBank(int u){
+    bank += u;
 }

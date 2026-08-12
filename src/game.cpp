@@ -72,19 +72,30 @@ void Game::GamePhase(void){
     int i = 1;
     printf("Phase de jeu : \n");
     for(Joueur& j:players){
-        char a;
+        char doble;
+        char dig;
         //Print time
         std::cout << "Joueur : " << j.getname() << "\n";
         printGame(j.getSet());
         printf("Mise : %d \n", j.GetBet());
         //Play time
-        printf("Voulez-vous piocher une carte ? (y/n) \n");
-        scanf(" %c", &a);
-        while(a == 'y'){
+        printf("Est-ce que vous souhaitez doubler ? (y/n) \n");
+        scanf(" %c", &doble);
+        if(doble == 'y'){
+            int bet = j.GetBet();
+            j.SetBet(bet*2);
             j.draw();
             printGame(j.getSet());
+        }
+        else{
             printf("Voulez-vous piocher une carte ? (y/n) \n");
-            scanf(" %c", &a);
+            scanf(" %c", &dig);
+            while(dig == 'y'){
+                j.draw();
+                printGame(j.getSet());
+                printf("Voulez-vous piocher une carte ? (y/n) \n");
+                scanf(" %c", &dig);
+            }
         }
         i++;
     }

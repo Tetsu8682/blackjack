@@ -8,16 +8,23 @@ Game::Game(std::vector<Joueur>& ps, Croupier c)
 
 int Game::calculValue(std::vector<int> game){
     int value = 0;
+    int as = 0;
     for(int v:game){
         int ivalue = ((v/4)+1 );
         if(ivalue == 1){
             value += 11;
+            as = 1;
         }
         else if(ivalue >= 10){
             value += 10;
         }
         else{
             value += ivalue;
+        }
+    }
+    if(as == 1 ){
+        if(value > 21){
+            value -= 10;
         }
     }
     return value;
@@ -125,5 +132,6 @@ void Game::EndPhase(void){
             }
         }
         i ++;
+        j.eraseGame();
     }
 }

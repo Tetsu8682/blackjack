@@ -6,5 +6,4 @@ Règles encore non implémantées:
 -Doubler (doubler sa mise en ne piochant qu'une seule carte)
 -Split (en cas de double, joueur 2 parties simultanément)
 -Gestion du paquet (Pour le moment pioche aléatoirement entre 1 et 52)
--Status spéciale de l'as (peut valoir 1 ou 11)
 -Possibilité de rejoindre/quitter le match en cours de route
